@@ -21,12 +21,12 @@ Usage Example
 	teraterm_macro.py -f teraterm_targets.csv -p C:\util\teraterm-4.106 -l C:\util\teraterm-4.106\logs
 
 The complete invocation syntax is:
-	teraterm_macro.py -f <csv name> -p <teraterm app root folder> -l <log file location>
+	teraterm_macro.py -f csv name -p teraterm app root folder -l log file location  
 
-The csv consists of 7 columns:
-run,connection,target,port,username,password,log_prefix
-
-Descriptions of each column are as follows:
+The csv consists of 7 columns:  
+run,connection,target,port,username,password,log_prefix  
+  
+Descriptions of each column are as follows:  
 - run: if set to no the script ignores the connection information
 - connection: Must use either serial, ssh, or nossh
 - username: leave blank if there is no username

@@ -16,7 +16,7 @@ Download locations
 Python: https://www.python.org/downloads/  
 Teraterm: https://osdn.net/projects/ttssh2/releases/  
 
-##Note##:  
+**Note:**   
 All .ttl, .csv and .py files should go into the Teraterm macros directory.  Will it work elsewhere?  Maybe.  I didn't test it elsewhere though.
 
 Usage Example

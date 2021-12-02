@@ -15,7 +15,10 @@ Download locations
 ------------------
 Python: https://www.python.org/downloads/  
 Teraterm: https://osdn.net/projects/ttssh2/releases/  
-  
+
+**Note:
+All .ttl, .csv and .py files should go into the Teraterm macros directory.  Will it work elsewhere?  Maybe.  I didn't test it elsewhere though.
+
 Usage Example
 -------------
 	teraterm_macro.py -f teraterm_targets.csv -p C:\util\teraterm-4.106 -l C:\util\teraterm-4.106\logs

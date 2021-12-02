@@ -1,0 +1,37 @@
+;=================================================================================
+; Parameters & Variables Setup
+;=================================================================================
+
+; usage
+; ttpmacro.exe macros\ssh.ttl "ip / hostname" "username" "password" "log file name" 
+
+getdate date_log '-%Y%m%d'
+
+hostname = param2
+username = param3
+password = param4
+logfilename = param5
+logdir = param6
+
+;=================================================================================
+; Teraterm auto logon - do not modify
+;=================================================================================  
+
+strconcat hostname ':22 /ssh /auth=password /user='
+  
+strconcat hostname username
+strconcat hostname ' /passwd='
+strconcat hostname password
+
+connect hostname
+
+;=================================================================================
+; Log file name builder - do not modify
+;=================================================================================  
+
+logfile = logdir
+strconcat logfile logfilename
+strconcat logfile date_log
+strconcat logfile '.log'
+
+logopen logfile 0 1 1 1 1 0 0 

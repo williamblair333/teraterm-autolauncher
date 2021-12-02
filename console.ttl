@@ -1,0 +1,42 @@
+;=================================================================================
+; Parameters & Variables Setup
+;=================================================================================
+
+; usage
+; ttpmacro.exe macros\console.ttl "port_number log file name"
+
+getdate date_log '-%Y%m%d'
+
+comport = param2
+username = param3
+password = param4
+logfilename = param5
+logdir = param6
+
+;=================================================================================
+; Teraterm auto logon - do not modify
+;=================================================================================  
+
+strconcat logfilename comport
+
+msg = '/C='
+strconcat msg comport
+strconcat msg '/auth=password /user='
+  
+strconcat msg username
+strconcat msg ' /passwd='
+strconcat msg password
+  
+connect msg
+;messagebox msg "inputstr"
+
+;=================================================================================
+; Log file name builder - do not modify
+;=================================================================================  
+
+logfile = logdir
+strconcat logfile logfilename
+strconcat logfile date_log
+strconcat logfile '.log'
+
+logopen logfile 0 1 1 1 1 0 0 

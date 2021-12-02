@@ -1,0 +1,56 @@
+;=================================================================================
+; Parameters & Variables Setup
+;=================================================================================
+
+; usage
+; ttpmacro.exe macros\ssh.ttl "ip / hostname port username password log file name
+
+getdate date_log '-%Y%m%d'
+
+prompt_login = 'Login:'
+prompt_password = 'Password:'
+prompt_command = 'CER> '
+
+hostname = param2
+port = param3
+username = param4
+password = param5
+logfilename = param6
+logdir = param7
+
+;=================================================================================
+; Teraterm auto logon - do not modify
+;=================================================================================  
+
+strconcat hostname ':'
+strconcat hostname param3
+strconcat hostname ' /nossh /auth=password /user='
+
+strconcat hostname username
+strconcat hostname ' /passwd='
+strconcat hostname password
+  
+connect hostname
+
+;=================================================================================
+; Log file name builder - do not modify
+;=================================================================================  
+
+logfile = logdir
+strconcat logfile logfilename
+strconcat logfile date_log
+strconcat logfile '.log'
+
+logopen logfile 0 1 1 1 1 0 0 
+
+;=================================================================================
+; Test Commands
+;=================================================================================  
+
+sendln username
+sendln  password
+sendln ' '
+;waitln prompt_command
+;sendln ' '
+;sendln 'enable'
+

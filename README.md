@@ -37,10 +37,10 @@ The first line of the CSV file is ignored.
 
 **CSV Examples
 ------------
--<csv>-
-run,connection,target,port,username,password,log_prefix
-yes,serial,19,,,Cisco-COM19-
-yes,ssh,192.168.1.2,22,root,penguinzrule,server2-
-no,nossh,192.168.1.25,23,admin,telnetrockz,server3-
-yes,nossh,192.168.1.25,23,admin,telnetrockz,server3-
-</csv>-
+-<csv>-  
+run,connection,target,port,username,password,log_prefix  
+yes,serial,19,,,Cisco-COM19-  
+yes,ssh,192.168.1.2,22,root,penguinzrule,server2-  
+no,nossh,192.168.1.25,23,admin,telnetrockz,server3-  
+yes,nossh,192.168.1.25,23,admin,telnetrockz,server3-  
+</csv>-  

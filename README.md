@@ -13,9 +13,9 @@ Prerequisites
 
 Download locations
 ------------------
-Python: https://www.python.org/downloads/
-Teraterm: https://osdn.net/projects/ttssh2/releases/
-
+Python: https://www.python.org/downloads/  
+Teraterm: https://osdn.net/projects/ttssh2/releases/  
+  
 Usage Example
 -------------
 	teraterm_macro.py -f teraterm_targets.csv -p C:\util\teraterm-4.106 -l C:\util\teraterm-4.106\logs

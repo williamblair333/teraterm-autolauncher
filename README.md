@@ -36,7 +36,8 @@ Descriptions of each column are as follows:
 - password: leave blank if there is no password
 - log_prefix: this will prepend the log file name (which is date stamped automatically)
 
-The first line of the CSV file is ignored.
+Note:  Serial/COM port connections only need 6 entries, see the examples.  I'll fix this for completeness later.  
+The first line of the CSV file is ignored.  
 
 **CSV Examples
 ------------

@@ -40,3 +40,16 @@ strconcat logfile date_log
 strconcat logfile '.log'
 
 logopen logfile 0 1 1 1 1 0 0 
+
+;=================================================================================
+; Additional Commands
+;=================================================================================  
+;time_offset = '((newtime = $(date +%s) - 5*60*60))'
+;time_set = 'date -s @$newtime'
+;sendln time_offset
+;sendln  time_set
+;sendln  'date'
+;sendln ' '
+;waitln prompt_command
+;sendln ' '
+;sendln 'enable'

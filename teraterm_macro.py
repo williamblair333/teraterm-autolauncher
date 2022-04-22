@@ -57,7 +57,6 @@ proc_tt_kill = "taskkill /IM ttermpro.exe /F & taskkill /IM ttpmacro.exe /F"
 logs_tt_move = "move /Y " + teralog + "*.log " + teraold
 
 try:
-    #call(proc_tt_kill)
     os.system(proc_tt_kill)
 except FileNotFoundError:
     print("No Teraterm processes found to kill.")

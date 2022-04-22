@@ -5,7 +5,7 @@
 #File:      teraterm_macro.py
 #Date:      2021NOV23
 #Author:    COMMS TEAM
-#Contact:	william.blair@enersys.com
+#Contact:	williamblair333@gmail.com
 #Tested on: Windows 10 21H1
 #
 #This script is intended to do the following:

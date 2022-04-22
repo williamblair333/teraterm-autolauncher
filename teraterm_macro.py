@@ -5,7 +5,7 @@
 #File:      teraterm_macro.py
 #Date:      2021NOV23
 #Author:    COMMS TEAM
-#Contact:	williamblair333@gmail.com
+#Contact:	william.blair@enersys.com
 #Tested on: Windows 10 21H1
 #
 #This script is intended to do the following:
@@ -95,8 +95,8 @@ for row_count, row in enumerate(reader):
 #serial connection
     if row[col_names[0]] == "yes" and row[col_names[1]] == "serial":
         ser_entry = teramacro_ser + " " + "\"" + row[col_names[2]] + "\" " \
-        + "\"" + row[col_names[3]] + "\" " + "\"" + row[col_names[4]] + "\" " \
-        + "\"" + row[col_names[5]] + "\" " + "\"" + teralog + "\" "
+        + "\"\" \"\" " \
+        + "\"" + row[col_names[6]] + "\" " + "\"" + teralog + "\" "
 
 #Turn print on to see how the commands are structured and issued.  Print can
 #be turned off without issue

@@ -5,7 +5,7 @@
 ; usage
 ; ttpmacro.exe macros\console.ttl "port_number log file name"
 
-getdate date_log '-%Y%m%d'
+getdate date_log '-%Y%m%d-%H%M'
 
 comport = param2
 username = param3

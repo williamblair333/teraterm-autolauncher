@@ -5,7 +5,7 @@
 ; usage
 ; ttpmacro.exe macros\ssh.ttl "ip / hostname port username password log file name
 
-getdate date_log '-%Y%m%d'
+getdate date_log '-%Y%m%d-%H%M'
 
 prompt_login = 'Login:'
 prompt_password = 'Password:'

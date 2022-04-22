@@ -1,22 +1,23 @@
 ################################################################################
 #
 #READ THE COMMENTS BEFORE RUNNING
-#Run:		teraterm_macro.py -f teraterm_targets.csv -p C:\util\teraterm-4.106 -l C:\util\teraterm-4.106\logs
+#Run:		python3 teraterm_macro -f teraterm_targets.csv -p C:\\util\\teraterm-4.106
 #File:      teraterm_macro.py
 #Date:      2021NOV23
-#Author:    William Blair
-#Contact:	williamblair333@gmail.com
+#Author:    COMMS TEAM
+#Contact:	william.blair@enersys.com
 #Tested on: Windows 10 21H1
 #
 #This script is intended to do the following:
 #
 #-automate launching teraterm terminal session via input csv file
-#-See attached 'teraterm_connections.csv' file for examples
+#-See attached 'teraterm_targets.csv' file for examples
 #-Automate log creation under 'filepath\logs
 #-One command to launch all sessions
 ################################################################################
 
 import argparse, csv, sys, time
+import os
 from subprocess import call
 #################################################################################
 
@@ -51,12 +52,13 @@ teramacro_ssh   = filepath + '\\ttpmacro.exe macros\\ssh.ttl'
 teramacro_nossh = filepath + '\\ttpmacro.exe macros\\nossh.ttl'
 #################################################################################
 
-#Kill previous Teraterm sessions or continue
-proc_tt_kill = "taskkill /IM ttermpro.exe /F"
+#Kill previous Teraterm sessions
+proc_tt_kill = "taskkill /IM ttermpro.exe /F & taskkill /IM ttpmacro.exe /F"
 logs_tt_move = "move /Y " + teralog + "*.log " + teraold
 
 try:
-    call(proc_tt_kill)
+    #call(proc_tt_kill)
+    os.system(proc_tt_kill)
 except FileNotFoundError:
     print("No Teraterm processes found to kill.")
 finally:
@@ -65,7 +67,7 @@ finally:
 print(logs_tt_move)
 
 try:
-    call(logs_tt_move)
+    os.system(logs_tt_move)
 except FileNotFoundError:
     print("No log files found to move.")
 finally:
@@ -90,6 +92,7 @@ for row_count, row in enumerate(reader):
 
 #The parameters are different for each connection.  Decide which to use
 #with the following if statements
+
 #serial connection
     if row[col_names[0]] == "yes" and row[col_names[1]] == "serial":
         ser_entry = teramacro_ser + " " + "\"" + row[col_names[2]] + "\" " \

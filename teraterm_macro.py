@@ -4,7 +4,7 @@
 #Run:		python3 teraterm_macro -f teraterm_targets.csv -p C:\\util\\teraterm-4.106
 #File:      teraterm_macro.py
 #Date:      2021NOV23
-#Author:    COMMS TEAM
+#Author:    William Blair
 #Contact:	williamblair333@gmail.com
 #Tested on: Windows 10 21H1
 #

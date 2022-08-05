@@ -4,8 +4,8 @@
 #Run:		python3 teraterm_macro -f teraterm_targets.csv -p C:\\util\\teraterm-4.106
 #File:      teraterm_macro.py
 #Date:      2021NOV23
-#Author:    William Blair
-#Contact:	williamblair333@gmail.com
+#Author:    COMMS TEAM
+#Contact:	william.blair@enersys.com
 #Tested on: Windows 10 21H1
 #
 #This script is intended to do the following:
@@ -96,7 +96,8 @@ for row_count, row in enumerate(reader):
     if row[col_names[0]] == "yes" and row[col_names[1]] == "serial":
         ser_entry = teramacro_ser + " " + "\"" + row[col_names[2]] + "\" " \
         + "\"\" \"\" " \
-        + "\"" + row[col_names[6]] + "\" " + "\"" + teralog + "\" "
+        + "\"" + row[col_names[6]] + "\" " + "\"" + teralog + "\" " \
+        + "\"" + row[col_names[7]] + "\" " + "\""
 
 #Turn print on to see how the commands are structured and issued.  Print can
 #be turned off without issue
@@ -111,7 +112,7 @@ for row_count, row in enumerate(reader):
         ssh_entry = teramacro_ssh + " " + "\"" + row[col_names[2]] + ":" \
             + row[col_names[3]] + "\" " + "\"" + row[col_names[4]] + "\" " \
             + "\"" + row[col_names[5]] + "\" " + "\"" + row[col_names[6]]  \
-            + "\" " + "\"" + teralog + "\" "
+            + "\" " + "\"" + teralog + "\" " + "\"" + row[col_names[7]] + "\" " + "\""
 
         print(ssh_entry)
         call(ssh_entry)
@@ -123,7 +124,7 @@ for row_count, row in enumerate(reader):
         nossh_entry = teramacro_nossh + " " + "\"" + row[col_names[2]] + "\" " \
             + "\"" + row[col_names[3]] + "\" " + "\"" + row[col_names[4]] + "\" " \
             + "\"" + row[col_names[5]] + "\" " + "\"" + row[col_names[6]] + "\" " \
-            + "\"" + teralog + "\" "
+            + "\"" + teralog + "\" " + "\"" + row[col_names[7]] + "\" " + "\"" 
 
         print(nossh_entry)
         call(nossh_entry)

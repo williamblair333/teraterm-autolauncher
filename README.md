@@ -10,6 +10,7 @@ Prerequisites
 -------------
 * Python 3.6+
 * Teraterm 4.106
+* Create two folders named logs & macros in the teraterm root folder
 
 Download locations
 ------------------

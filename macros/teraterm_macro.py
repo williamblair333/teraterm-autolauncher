@@ -4,8 +4,8 @@
 #Run:		python3 teraterm_macro -f teraterm_targets.csv -p C:\\util\\teraterm-4.106
 #File:      teraterm_macro.py
 #Date:      2021NOV23
-#Author:    COMMS TEAM
-#Contact:	william.blair@enersys.com
+#Author:    william blair
+#Contact:	william.blair3332gmail.com
 #Tested on: Windows 10 21H1
 #
 #This script is intended to do the following:

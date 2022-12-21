@@ -52,10 +52,9 @@ teramacro_ssh   = filepath + '\\ttpmacro.exe macros\\ssh.ttl'
 teramacro_nossh = filepath + '\\ttpmacro.exe macros\\nossh.ttl'
 #################################################################################
 
+
 #Kill previous Teraterm sessions
 proc_tt_kill = "taskkill /IM ttermpro.exe /F & taskkill /IM ttpmacro.exe /F"
-logs_tt_move = "move /Y " + teralog + "*.log " + teraold
-
 try:
     os.system(proc_tt_kill)
 except FileNotFoundError:
@@ -63,8 +62,7 @@ except FileNotFoundError:
 finally:
     print("Continuing...") 
 
-print(logs_tt_move)
-
+logs_tt_move = "move /Y " + teralog + "*.log " + teraold
 try:
     os.system(logs_tt_move)
 except FileNotFoundError:
@@ -72,6 +70,7 @@ except FileNotFoundError:
 finally:
     print("Continuing...") 
 
+print(logs_tt_move)
 #################################################################################
 
 #Get filename from -f command-line arguments
@@ -94,10 +93,16 @@ for row_count, row in enumerate(reader):
 
 #serial connection
     if row[col_names[0]] == "yes" and row[col_names[1]] == "serial":
-        ser_entry = teramacro_ser + " " + "\"" + row[col_names[2]] + "\" " \
-        + "\"\" \"\" " \
-        + "\"" + row[col_names[6]] + "\" " + "\"" + teralog + "\" " \
-        + "\"" + row[col_names[7]] + "\" " + "\""
+        ser_entry = teramacro_ser + " " \
+        + "\"" + row[col_names[2]] + "\" " \
+        + "\"" + row[col_names[3]] + "\" " \
+        + "\"\" " \
+        + "\"\" " \
+        + "\"" + row[col_names[6]] + "\" " \
+        + "\"" + teralog + "\" " \
+        + "\"" + row[col_names[7]] + "\" " \
+
+    #C:\util\teraterm-4.106\ttpmacro.exe macros\console.ttl "14" "" "" "tp_link_switch_01" "C:\util\teraterm-4.106\logs\" "Local - tp_link_switch_01" "
 
 #Turn print on to see how the commands are structured and issued.  Print can
 #be turned off without issue

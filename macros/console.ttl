@@ -8,11 +8,12 @@
 getdate date_log '-%Y%m%d-%H%M'
 
 comport = param2
-username = param3
-password = param4
-logfilename = param5
-logdir = param6
-title = param7
+baudrate = param3
+username = param4
+password = param5
+logfilename = param6
+logdir = param7
+title = param8
 
 ;=================================================================================
 ; Teraterm auto logon - do not modify
@@ -32,6 +33,16 @@ connect msg
 ;messagebox msg "inputstr"
 
 ;=================================================================================
+; Baudrate Set - do not modify
+;=================================================================================  
+
+str2int i_baudrate baudrate
+setbaud i_baudrate
+
+;sprintf '%d' i_baudrate
+;messagebox inputstr 'sprintf test(1)'
+
+;=================================================================================
 ; Log file name builder - do not modify
 ;=================================================================================  
 
@@ -45,12 +56,13 @@ logopen logfile 0 1 1 1 1 0 0
 ;=================================================================================
 ; Teraterm window set title - do not modify
 ;=================================================================================  
-settitle title
 
+settitle title
 
 ;=================================================================================
 ; Additional Commands
 ;=================================================================================  
+
 ;time_offset = '((newtime = $(date +%s) - 5*60*60))'
 ;time_set = 'date -s @$newtime'
 ;sendln time_offset

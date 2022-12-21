@@ -40,11 +40,11 @@ Descriptions of each column are as follows:
 Note:  Serial/COM port connections only need 6 entries, see the examples.  I'll fix this for completeness later.  
 The first line of the CSV file is ignored.  
 
-**CSV Examples
+**CSV Examples (Now you can set the baud rate!)
 ------------
 -<csv>-  
 run,connection,target,port,username,password,log_prefix  
-yes,serial,19,,,Cisco-COM19-  
+yes,serial,19,115200,,Cisco-COM19-  
 yes,ssh,192.168.1.2,22,root,penguinzrule,server2-  
 no,nossh,192.168.1.25,23,admin,telnetrockz,server3-  
 yes,nossh,192.168.1.25,23,admin,telnetrockz,server3-  

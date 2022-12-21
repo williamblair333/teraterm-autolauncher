@@ -14,8 +14,6 @@ password = param5
 logfilename = param6
 logdir = param7
 title = param8
-;C:\util\teraterm-4.106\ttpmacro.exe macros\console.ttl "14"         "" "" "tp_link_switch_01" "C:\util\teraterm-4.106\logs\" "Local - tp_link_switch_01" "
-;C:\util\teraterm-4.106\ttpmacro.exe macros\console.ttl "14" "38400" "" "" "tp_link_switch_01" "C:\util\teraterm-4.106\logs\" "Local - tp_link_switch_01"
 
 ;=================================================================================
 ; Teraterm auto logon - do not modify

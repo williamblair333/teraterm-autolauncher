@@ -1,13 +1,13 @@
 TeraTerm AutoLauncher
 ========================
-Update:  I've been using this tool now for well over a year and it's been a complete time saver
-It automatically launches connections and creates custom log files on the fly
-It even works in Wine!!
+Update:  I've been using this tool now for well over a year and it's been a complete time saver.  
+It automatically launches connections and creates custom log files on the fly.  
+It even works in Wine!!  
 This tool contains 3 custom ttl files used to launch serial, ssh and custom ipv4 
 ports automatically.  The user need only install the prerequisite software and 
 then populate the csv file with the desired connection information.  An example 
-file is included.
-
+file is included.  
+  
 Prerequisites
 -------------
 * Python 3.6+

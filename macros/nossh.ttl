@@ -17,7 +17,6 @@ username = param4
 password = param5
 logfilename = param6
 logdir = param7
-title = param8
 
 ;=================================================================================
 ; Teraterm auto logon - do not modify
@@ -25,7 +24,7 @@ title = param8
 
 strconcat hostname ':'
 strconcat hostname param3
-strconcat hostname ' /nossh /T=0 /auth=password /user='
+strconcat hostname ' /nossh /auth=password /user='
 
 strconcat hostname username
 strconcat hostname ' /passwd='
@@ -43,11 +42,6 @@ strconcat logfile date_log
 strconcat logfile '.log'
 
 logopen logfile 0 1 1 1 1 0 0 
-
-;=================================================================================
-; Teraterm window set title - do not modify
-;=================================================================================  
-settitle title
 
 ;=================================================================================
 ; Test Commands

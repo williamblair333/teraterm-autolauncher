@@ -1,4 +1,0 @@
-run,connection,target,port,username,password,log_prefix,window_title
-yes,ssh,192.168.1.36,22,linux,LetmeIn123$,my-linux-desktop,debian-01
-no,nossh,192.168.1.37,23,linux,LetmeOut12$,my-linux-tftp,tftp-01
-yes,serial,10,115200,,,appliance_serial_log,Appliance-01

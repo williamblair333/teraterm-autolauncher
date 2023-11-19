@@ -1,0 +1,21 @@
+Windows 10 22H2
+Teraterm 4.1.06
+Python 3.6+
+
+Python:
+	Use admin privs when installing py.exe
+	Add python.exe to PATH
+	Customize installation
+	Check all optional boxes
+	Check all advanced options except symbols and debug binaries
+	Install to C:\util\python\Python312
+	Click Disable path length limit
+	You may still need to update path statement with C:\util\python\Python312
+
+Teraterm:
+	Custom Installation.  You must install to a folder that you have 
+		permissions to write into. I use C:\util\teraterm. 
+	Otherwise accept defaults
+
+	Place Desktop shortcut on desktop and ensure it's pointing to the 
+	correct folder

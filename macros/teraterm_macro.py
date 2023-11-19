@@ -46,6 +46,7 @@ sec = 1
 #This will build the commands that need to run for each session entry
 
 teralog         = logpath + '\\'
+print(teralog)
 teraold         = teralog + 'old'
 teramacro_ser   = filepath + '\\ttpmacro.exe macros\\console.ttl'
 teramacro_ssh   = filepath + '\\ttpmacro.exe macros\\ssh.ttl'
@@ -82,7 +83,7 @@ col_names = reader.fieldnames
 #Skip the entry if you set 1st row in csv config file to "no"
 for row_count, row in enumerate(reader):
     if row[col_names[0]] == "no":
-        no_run = "echo Entry " + row[col_names[5]] \
+        no_run = "echo Entry " + row[col_names[6]] \
         + " slotted not to " + "run. Skipping..."
         print(no_run)
         continue

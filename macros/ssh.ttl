@@ -35,3 +35,23 @@ strconcat logfile date_log
 strconcat logfile '.log'
 
 logopen logfile 0 1 1 1 1 0 0 
+
+;=================================================================================
+; Working Area
+;=================================================================================  
+
+; Setup the test
+pause 1
+sendln './wait_for_esc.sh'
+pause 1
+
+; wait for message to appear on screen
+wait 'Press Esc key to exit'
+pause 1
+
+; Send the ESC key
+send #27
+pause 1
+
+; Do other stuff here Send the 'ls -lah /etc' command followed by Enter
+; sendln 'ls -lah /etc'

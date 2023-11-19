@@ -1,5 +1,6 @@
 run,connection,target,port,username,password,log_prefix,window_title
-yes,serial,19,115200,,Cisco-COM19-,server1-,window title goes here
-yes,ssh,192.168.1.2,22,root,penguinzrule,server2-,window title goes here
+no,serial,19,115200,,Cisco-COM19-,server1-,window title goes here
+yes,ssh,192.168.1.13,22,bill,passwordgoeshere,tc-vmh-01,tc-vmh-01-192.168.1.13
+yes,ssh,192.168.1.16,22,bill,passwordgoeshere,tc-vmh-02,tc-vmh-02-192.168.1.16
 no,nossh,192.168.1.25,23,admin,telnetrockz,server3-,window title goes here
-yes,nossh,192.168.1.25,23,admin,telnetrockz,server3-,window title goes here
+no,nossh,192.168.1.25,23,admin,telnetrockz,server3-,window title goes here

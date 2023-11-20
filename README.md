@@ -42,15 +42,9 @@ All .ttl, .csv, and .py files should go into the Teraterm macros directory. Will
 
 teraterm_macro.py -f teraterm_targets.csv -p C:\util\teraterm-4.106 -l C:\util\teraterm-4.106\logs
 
-csharp
-
-
 The complete invocation syntax is:
 
 teraterm_macro.py -f csv name -p teraterm app root folder -l log file location
-
-markdown
-
 
 The CSV consists of 7 columns:  
 - run

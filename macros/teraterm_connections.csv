@@ -1,6 +1,13 @@
 run,connection,target,port,username,password,log_prefix,window_title
 no,serial,19,115200,,Cisco-COM19-,server1-,window title goes here
-yes,ssh,192.168.1.13,22,bill,passwordgoeshere,tc-vmh-01,tc-vmh-01-192.168.1.13
-yes,ssh,192.168.1.16,22,bill,passwordgoeshere,tc-vmh-02,tc-vmh-02-192.168.1.16
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-01,tc-vmh-01-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-02,tc-vmh-02-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-03,tc-vmh-03-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-04,tc-vmh-04-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-05,tc-vmh-05-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-06,tc-vmh-06-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-07,tc-vmh-07-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-08,tc-vmh-08-192.168.1.13
+yes,ssh,192.168.1.13,22,testman,Pass123$,tc-vmh-09,tc-vmh-09-192.168.1.13
 no,nossh,192.168.1.25,23,admin,telnetrockz,server3-,window title goes here
 no,nossh,192.168.1.25,23,admin,telnetrockz,server3-,window title goes here

@@ -1,19 +1,18 @@
-
 import argparse, csv, sys, time
 import os
-from subprocess import call
-from concurrent.futures import ThreadPoolExecutor
+import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Argument parsing and setup
 parser = argparse.ArgumentParser(description='To set directory and source file')
-parser.add_argument('-f', '--file', type=str, help='Teraterm sessions config file,\t Required', required=True)
-parser.add_argument('-p', '--path', type=str, help='Teraterm sessions path to config file,\t Required', required=True)
-parser.add_argument('-l', '--logpath', type=str, help='Teraterm sessions log file location,\t Required', required=True)
+parser.add_argument('-f', '--file', type=str, help='Teraterm sessions config file, Required', required=True)
+parser.add_argument('-p', '--path', type=str, help='Teraterm sessions path to config file, Required', required=True)
+parser.add_argument('-l', '--logpath', type=str, help='Teraterm sessions log file location, Required', required=True)
 args = parser.parse_args()
 
 filename = args.file
 filepath = args.path
-logpath  = args.logpath
+logpath = args.logpath
 
 # Global variables
 sec = 1
@@ -25,20 +24,28 @@ teramacro_nossh = filepath + '\\ttpmacro.exe macros\\nossh.ttl'
 
 # Function to launch a session
 def launch_session(row):
-    if row['Run'] == 'yes':
-        if row['Type'] == 'serial':
-            ser_entry = f"{teramacro_ser} "{row['Port']}" "" "" "{row['Name']}" "{teralog}" "{row['LogName']}" "
-            print(ser_entry)
-            call(ser_entry)
-        elif row['Type'] == 'ssh':
-            ssh_entry = f"{teramacro_ssh} "{row['IP']}:{row['Port']}" "{row['Username']}" "{row['Password']}" "{row['Name']}" "{teralog}" "{row['LogName']}" "
-            print(ssh_entry)
-            call(ssh_entry)
-        elif row['Type'] == 'nossh':
-            nossh_entry = f"{teramacro_nossh} "{row['IP']}" "{row['Port']}" "{row['Username']}" "{row['Password']}" "{row['Name']}" "{teralog}" "{row['LogName']}" "
-            print(nossh_entry)
-            call(nossh_entry)
+    #print("Processing row:", row)
+    if row['run'] == 'yes':
+        command = ""
+        if row['connection'] == 'serial':
+            # Update the command construction with correct key names
+            pass  # Replace with your command construction logic for serial connections
+        elif row['connection'] == 'ssh':
+            command = f"{teramacro_ssh} \"{row['target']}:{row['port']}\" \"{row['username']}\" \"{row['password']}\" \"{row['log_prefix']}\" \"{teralog}\" \"{row['window_title']}\""
+        elif row['connection'] == 'nossh':
+            # Update the command construction with correct key names
+            pass  # Replace with your command construction logic for nossh connections
+
+        print("Constructed command:", command)
+        time.sleep(5)
+
+        if command:
+            try:
+                subprocess.Popen(command, shell=True)
+            except Exception as e:
+                print(f"Error executing command: {e}")
         time.sleep(sec)
+        
 
 # Main script logic
 def main():
@@ -49,7 +56,7 @@ def main():
     except FileNotFoundError:
         print("No Teraterm processes found to kill.")
     finally:
-        print("Continuing...") 
+        print("Continuing...")
 
     # Move old logs
     logs_tt_move = f"move /Y {teralog}*.log {teraold}"
@@ -58,16 +65,20 @@ def main():
     except FileNotFoundError:
         print("No log files found to move.")
     finally:
-        print("Continuing...") 
+        print("Continuing...")
     print(logs_tt_move)
 
     # Reading CSV file and launching sessions in parallel
     with open(filename) as csvfile:
         reader = csv.DictReader(csvfile)
-        with ThreadPoolExecutor(max_workers=16) as executor:
+        with ThreadPoolExecutor(max_workers=9) as executor:
+            # Submitting tasks for each row in the CSV
             futures = [executor.submit(launch_session, row) for row in reader]
-            for future in concurrent.futures.as_completed(futures):
-                pass  # Handle results, logging, or exceptions here
+
+            # Wait for all tasks to complete and handle results
+            for future in as_completed(futures):
+                # Handle results, logging, or exceptions here
+                pass
 
 if __name__ == '__main__':
     main()
